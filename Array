@@ -1,0 +1,96 @@
+# Digital.Innovation.One
+Online Bootcamp with several techs
+
+array methods
+uma array/lista x:
+x.push() - add to end
+x.pop() - remove from end
+x.shift() - remove from start
+x.unshift() - add to start
+ 
+ex:
+    let dishesToDo = ['big platter']
+    dishesToDo.unshift('Large plate')
+return: dishesToDo
+            (2) ["large plate", "big platter"]
+    dishesToDo.unshift('small plate')
+return: dishesToDo
+            (2) ["small plate", "large plate", "big platter"]
+    dishesToDo.shift()
+return: "small plate"
+    dishesToDo
+            (2) ["large plate", "big platter"]
+
+vc pode agrupar mais de um de uma vez:
+    dishesToDo.unshift('fork', 'knife')
+return: dishesToDo
+            (2) ["fork", "knife", "large plate", "big platter"]
+se eu tivesse colocado um por um a order seria diferente.
+
+outros metodos:
+- concat - junta duas arrays(listas)
+const array1 = ['a', 'b', 'c', 'd']
+const array2 = ['e', 'f', 'g']
+ console.log(array1.concat(array2));
+retrn: array ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+- includes - boolean, returns the value
+let ingredients = ['water, 'charcoal', 'cat fish', 'butter', 'cheese'];
+
+ingredients.includes('salt')
+returns: false
+ingredients.includes('fish')
+returns: false (pq pega exatamente uma string e nao uma palavra dentro)
+
+- indexOf - search for value and gives where it is
+let ingredients = ['water, 'charcoal', 'cat fish', 'butter', 'cheese'];
+
+ingredients.indexOf('charcoal')
+returns: 1 
+ingredients.indexOf('maple syrup')
+returns: -1 
+
+- reverse - reverte uma array, mudando a array pra proxima acao
+let a = ['t', 'c', 'e', 'p', 's', 'e', 'r']
+a.reverse()
+returns: a
+(7) [ 'r', 'e', 's', 'p', 'e', 'c', 't']
+
+- join - pega todos os elementos de uma array e coloc junto numa string
+
+a.join()
+"t, c, e, p, s, e, r"
+a.join(=)
+"t=c=e=p=s=e=r"
+a.reverse().join(.)
+"r.e.s.p.e.c.t"
+
+- slice - corta um pedaco e faz uma nova
+let animals = ['shark', 'salmon', 'whale', 'bear', 'lizard', 'tortoise']
+let swimmers = animals.slice(0, 3);#q nem python, vai ate 2 e nao 3
+let mammals = animals.slice(2, 4);
+let reptiles = animals.slice(4, 6);#ou apenas 4 e vai ate o final
+# e se colocar num negativo vai do fim pro comeco
+let quadruped = animals.slice(-3);#tortoise, lizard, bear
+let copy = animals.slice() # jeito de fazer uma copia da array em outra
+
+- splice - remove/replace/add elements
+usando a mesma array de cima:
+animals.splice(1, 0, 'octopus')#segundo valor deleta, terceiro ADD
+(7) ['shark', 'octopus', 'salmon', 'whale', 'bear', 'lizard', 'tortoise']
+animals.splice(3, 2)#deleta a partir do item 3, 2 itens
+(2) ["whale', "bear"]
+(5) ['shark', 'octopus', 'salmon', 'lizard', 'tortoise']
+animals.splice(3, 0, 'snake', 'frog')
+animals = ['shark', 'octopus', 'salmon', 'snake', 'frog', 'lizard', 'tortoise']
+animals.splice(0, 2, 'SHARK', 'OCTOPUS')
+troca os dois primeiros por versoes upper
+
+- sort - sorts an array - normalmente alfabetico
+let ppl = ['jolene', 'mrs anderson', 'roxanne', 'maggie may', 'angie']
+ppl.sort()
+(5) ["angie", "Jolene", "Maggie may", "mrs anderson", "roxanne"]
+
+let num = [34, 10, 10000, 67, 99]
+num.sort()
+(5) [10, 10000, 34, 67, 99] # transforma tudo em string e vai de acordo com UTF-16. normalmente usa com uma outra funcao junta - mais pra frente-

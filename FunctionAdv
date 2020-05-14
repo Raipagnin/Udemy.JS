@@ -61,7 +61,8 @@ Returning functions as values
 >> const triple = multiplyBy (3);
 on the console
 >>triple(6)
->> 18       //when creating triple, i've set that num = 3, so every number i call on the console inside() triple will be *3, so being x
+>> 18       //when creating triple, i've set that num = 3, so every number i call on the console inside() triple will be *3, so 
+being x
 
 let's try with double
 >>const double = multiply(2);
@@ -87,7 +88,8 @@ At the moment they're not great examples of use... but hopefully i'll catch up l
 >> child(67)
 >> false
 
-CALLBACK = 2 functions, whenever we execute a function within a function inside the function we are calling it back... did u get it? No? me neither, but check this:
+CALLBACK = 2 functions, whenever we execute a function within a function inside the function we are calling it back... did u get it?
+No? me neither, but check this:
 >>function callTwice(func) {
     func();
     func()
@@ -98,7 +100,8 @@ CALLBACK = 2 functions, whenever we execute a function within a function inside 
 >>callTwice(laugh); //i'm calling back laugh() which will run within calltwice()
 They're extremely common.
 
-SETTIMEOUT = new method, yeyyy....it's like sleep on python, u have to put inside() the function or whatever is gonna be called and the time in milieconds, like:
+SETTIMEOUT = new method, yeyyy....it's like sleep on python, u have to put inside() the function or whatever is gonna be called and 
+the time in milieconds, like:
 >> function welcome(){
     alert('WELCOME')
 }
@@ -115,4 +118,28 @@ HOISTING = var can be hoisted. let cannot
 on console
 >> animal
 >> undefined //js hoisted animal but because it was printed before setting a value than it gave as undefined and not error
-'let' and 'const' on the other hand would have been an ERROR. a FUNCTION IS HOISTED... as soon as u define a function is like it went all the way to the beginning and is gonna work, doesn't matter where in the script, but if a do a function expression and define it inside a variable.
+'let' and 'const' on the other hand would have been an ERROR. a FUNCTION IS HOISTED... as soon as u define a function is like it 
+went all the way to the beginning and is gonna work, doesn't matter where in the script, but if a do a function expression and 
+define it inside a variable.
+
+ARROW FUNCTIONS = 
+NOT IE SUPPORTED.
+New way to write and define functions. You don't need to write the word function anymore, the syntax looks like this:
+>> const sqr = (x) => {
+    return x*x;
+}
+>> const sum = (x, y) => {
+    return x + y;
+}
+ the () are optional ONLY if you only have one parameter, like the first example
+const sqr = x => {
+    return x*x;
+}
+IMPLICIT RETURN = when an arrow function only have one parameter and doesn't need the return (which is implicit so u swap from {} to ())
+>>const sqr = n => (
+    n * n
+)
+Or even taking away the (), and just leaving the => 
+>> const sqr =  => n * n;
+
+There's a difference from regular func to arrow ones, but we will see it later on when learning 'this'

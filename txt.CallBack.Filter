@@ -1,0 +1,6 @@
+it doesn't mutate the array in which is filtering, doesn't add up, but u can create a new array inside a variable with the new filtered results
+>> const numbers = [1,2, 3, 4, 5, 6, 7, 8, 9, 0]
+>> const odd = numbers.filter( n => n % 2 === 1);
+>> odd
+>> (5) [1, 3, 5, 7, 9]
+The way u use find to find the first match of something, this one is a bit more complete, because it will filter and u can store in a new variable, so if u have for ex a online shop for books, and want to find inside an array with objects that has several books by genre, title, rating, etc... u can filter the books by rating for exemple and have a whole new array with these books(objects) inside them.

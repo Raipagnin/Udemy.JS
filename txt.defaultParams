@@ -1,0 +1,26 @@
+So in a function where you have more than one argument, but u don't have its value...
+>> function multiply (a, b) {
+    return a * b;
+}
+ ON the console, if I just have the value of 'a' for ex.
+ >> multiply (4)
+ >>NaN
+ >> multiply (4, 5)
+ >>20
+ Before you had to put a few lines to specify that 'b' for example if it didn't have any value, to be defined 1 for ex BY DEFAULT, it wasn't user or dev friendly, now we have default params... which would look more like this
+ >> function multiply (a, b=1) {
+     return a* b; 
+ }
+ >>multiply (4)
+ >> 4       // a = 4, b = 1
+ >>multiply, (4, 2)
+ >> 8       // a = 4, b = 2 since b was passed
+ another example with strings and an arrow function
+ >> const greet = (person, greeting = 'hi') => {
+     console.log (`${greeting}, ${person}!`);
+ }
+ >> greet ('Jon')
+ >> hi, Jon!
+ >> greet ('Jon', 'Hello')
+ >> Hello, Jon!
+ Order matters, so u need to pass the default params at the end, if u have more than 1 default params you won't be able to pass the last and jump the middle one without passing it as well.

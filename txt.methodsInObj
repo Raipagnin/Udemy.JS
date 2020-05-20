@@ -1,0 +1,22 @@
+The idea of adding functions => methods inside an obj: the simplest reason why... to group functions together, such as:
+>> const math = {
+    sum : function (x, y) {
+        return x + y;
+    },
+    multiply : function (x, y) {
+        return x * y;
+    },
+    divide : function (x, y) {
+        return x / y;
+    }
+};
+Now a shorthand to write it's not to put key and colon and add function, you can:
+>> const math = {
+    add(x, y) {
+        return x + y
+    },
+    multiply(x,y {
+        return x * y
+    })
+} 
+Not to mention you can do it shorter, with implicit return and etc, but this way it's easier to read in order to demonstrate the main difference... no need to put key : function.

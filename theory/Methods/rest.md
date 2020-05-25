@@ -1,0 +1,33 @@
+Before it was used 'arguments' but there were a few problems... like arguments on objects... But, it's not a real array, etc etc etc, so We use 'rest'. the sintax is the same as spread, 3 dots (...) but you will use it inside a function inside () where u put your arguments.
+Before with argument, ex:
+>>function sum () {
+    const argArray = [...arguments]         // you had to turn arguments into an arrray in order to have access to it
+    return argsArray.reduce((total, currVal) => {
+        return total + currVal
+    })
+}
+now with rest
+>> function sum (...nums) {
+    return nums.reduce((total, currVal) => {
+        return total + currVal
+    })
+}
+>> sum (4, 5, 6, 7)
+>> 22
+
+Collects as well the remaining arguments (while arguments would collect them all, even if u passed a few of them as well)
+>> function fullName(first, last, ...title) {
+    console.log('first', first),
+    console.log('last', last),
+    console.log('title', title)
+}
+>> fullName('Tim', 'Jones', 'Jr.', 'III', 'Mr.')
+>> first Tim
+>> last Jones
+>> title (3) ['Jr.', 'III', 'Mr.']
+
+U can also use it on arrow funcitons
+>> const multiply = (...nums) => (nums.reduce(total, currVal) => total * currVal)
+>> multiply(2, 3, 4)
+>> 24
+  

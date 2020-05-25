@@ -1,0 +1,100 @@
+U can use it many ways, and the sintax is 3 dots ( ... ), for function calls, ex:
+We have Math.max and Math.min that will tell you from a bunch of numbers which is the highest value and the lowest, but if you give them an array, they will return undefined, because an array even though can have a list of numbrs inside, Math.max and .min only see it as a list that contains something inside, it's needed then to break that list, we use then spread.
+>> Math.max (3, 5, 1, 99, 12, 8, 65, 43)
+>> 99
+>> Math.min(3, 5, 1, 99, 12, 8, 65, 43)
+>> 1
+>> const nums [3, 5, 1, 99, 12, 8, 65, 43]
+>> Math.max(nums)
+>> NaN
+>> Math.max(...nums)        // this way we are spreading the iterable into singular individual arguments
+>> 99
+So in a useless function just for example?:
+>>  function giveMe(a, b, c, d) {
+    console.log ('a', a);
+    console.log ('b', b);
+    console.log ('c', c);
+    console.log ('d', d);
+}
+>> giveMe (2, 3, 4, 5)
+>> a 2
+>> b 3
+>> c 4
+>> d 5
+Now if i take an array of colours
+>> const colors = ['red', 'blue', 'grey', 'black']
+>> giveme(colors)
+>> a (4) ['red', 'blue', 'grey', 'black']
+>> b undefined
+>> c undefined
+>> d undefined
+but when using spread;
+>> giveMe(... colors)
+>> a red
+>> b blue
+>> c grey
+>> d black
+It can be used on strings, other variables...
+>> let str = 'GOAT'
+>> giveMe (...str)
+>> a G
+>> b O
+>> c A
+>> d T
+
+IN ARRAYS LITERALS = It's really useful, u can use to combine arrays, duplicate, creating new ones, modify it etc etc etc
+
+>> const reptiles = ['snake', 'lizard', 'crocodile']
+>> const arach = ['tick', 'scorpion', 'tarantula']
+>> const mammals = ['cat', 'dog', 'cow']
+to join, creating a new array
+>> const notMammal = [...arach, ...reptiles] // be aware that order matters!!
+>> notMammal = ['tick', 'scorpion', 'tarantula', 'snake', 'lizard', 'crocodile'] 
+You could use also concat for this purpose
+>> const notMammal = arach.concat(reptiles)
+Normally we use spread to copy arrays in order to still maintain an original one 
+>> const reptileCopy = [...reptiles]
+>> reptiles = ['snake', 'lizard', 'crocodile']
+>> reptileCopy = ['snake', 'lizard', 'crocodile']
+>> reptiles === reptileCopy
+>> false        // they are not the same, they do not have the same reference!!
+
+U can use it instead of split
+>> const str = 'abcdefg'
+>> str.split()
+>> (7) ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+>> [...str]
+>> (7) ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+SPREAD IN OBJECT LITERALS = U can use it to copy key/values from an object for example:
+>> const feline {
+    legs : 4,
+    family : 'Felidae'
+};
+>> const canine {
+    family : 'Canidae',
+    furry : true
+};
+>> const dog = {
+    ... canine,
+    isPet : true,       // i want to add all keys/values from canine and plus add these 2 below
+    adorable : true
+}
+>> dog
+>> {family : 'Canidae', furry : true, isPet : true, adorable : true}
+If i wanted to merge the first 2: Notice they have some keys the same:
+
+>> const catdog {
+    ... canine,
+    ... feline
+}
+>> catdog
+>> {family: 'Felidae', furry : true, legs: 4}   //the family was overwritten, so because feline was second, it has overwritten canine
+
+I i had set legs to be 3 after spreading canine:
+>> const cat1 {
+    ...feline,
+    legs : 3
+}
+>> cat1
+>> {family: 'Felidae', legs : 3}        // i had feline spread, so legs were 4, and then updated to 3 as i input the second value

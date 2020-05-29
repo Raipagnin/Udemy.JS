@@ -1,0 +1,22 @@
+manipulating CSS with JS and DOM:
+Imagining that we have a <h1> where on the CSS script it's purple and font-size of 60px:
+Let's save it in a const called h1
+>> const h1 = document.querySelector('h1')
+Imagining that this is the only h1;
+Now using .style, <h1> will return me this huge CSSStyleDeclaration where it shows all properties of <h1> like the border, alignment, including color and size as seen in the CSS script, BUT most if not all of them will be empty, even if I ask to return color, which I know that on the CSS script is set to purple
+>> h1.style.color
+>> ""
+It will only show you purple, for ex, in case the style was directly on the HTML.
+So the .style prop can be used to change props but not to read it  unless it's on line with HTML.
+
+If u want to change the style on several elements or att:
+>> const allLis = document.querySelectorAll('li')
+>> const colors = ['red, 'orange', 'yellow', 'green', 'blue', 'purple']
+
+>> allLis.forEach((li, i) => {
+      const color = colors[i]
+      li.style.color = color;
+})
+
+This way every single <li> will go over the array of colors and have a different one
+You can also use loop 'for' in order to get the same results

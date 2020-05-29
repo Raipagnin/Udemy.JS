@@ -1,0 +1,8 @@
+getAttribute() = calling the argument
+setAttribute() = calling the argument and the swap
+
+setAtt has a downside which is to completely overwrite the swap, so let's say i have a <ul> with a todo list with 4 <li>, and they're in a font size, and color such as green, i've done on CSS a whole class to set a .todo style in all of them.
+I did another one called .done on CSS where it would change color from green to gray, cross out the item, and set opacity to 50%.
+If i use setAttribute('class', 'done') and swap .todo to .done It will completely overwrite .todo, therefore the font size before which was a bit bigger, or the font type, would be set to whatever you have on .done, therefore, .done would have to be super complete in info definition such as it was .todo, and this way u wouldn't be able to just swap changes, or add changes.
+you could do:
+>> todo.setAttribute('class', 'todo done')      //this way u add both

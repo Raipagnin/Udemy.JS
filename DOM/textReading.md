@@ -1,0 +1,23 @@
+.innerText
+As it says, allows u to check the innertext of an element. If u get an element with querySelector for example and save it to a variable, call thiis variable with .innerText (no ()) and the result will be a string with the text. So if you have for example on a <h1> written "Welcome to my page" this is what's gonna be returned.
+
+In case you get something that has more than one choice inside. For ex an <ul> that has 3 <li>, you will get the 3 textx in the 3 <li>.
+The common use for it is to change a text within an element, normally with an event. You can set to change text on a button whenever you set the mouse to pass over it, or when to click it, etc. Note that in case u choose an element that has more than one element, such as the <ul> mentioned above and I decide to change the text, I gotta make sure to change it correctly, or to tag the specific <li> inside, otherwise the 3 <li> will become just one with the new text.
+
+.textContent
+Same as .innerText:
+
+>> const h1 = document.querySelector('h1')      //set the element in a variable
+>> undefined
+>> h1.innerText      //when calling it:
+>> "my webpage"     //an example of text inside
+>> h1.innerText = "Welcome"     //to change it
+>> h1.textContent = "Hello World" //exact same change
+
+What is the difference then?
+Let's say you have a <p> and inside that <p> you will have a few lines of text, they have different space and identation all over, plus u decided to put a script inside with a console.log let's say.
+If you call .innerText, it will return you the text, the complete text as it would be shown on the web page, whereas if u call .textContent it will show you the text exactly as you put in the code/jsscript, and as well is gonna show the console.log line as it was written but without properties, just as it was part of a string
+
+so .innerText shows what u see on the page, and .textContent shows what's in the code.
+Note that .textContent is faster.
+ 

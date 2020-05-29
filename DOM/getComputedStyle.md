@@ -1,0 +1,4 @@
+getComputedStyle() = using inside the () what you want to access in form of a str
+>> const li = document.querySelector('li') //just to get the first one
+>> li.getComputedStyle
+It will return a huge list CSS Declaration but this time it won't be the style in line with HTML like we've seen on .style alone

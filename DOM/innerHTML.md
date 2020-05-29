@@ -1,0 +1,14 @@
+Returns not only the text inside a piece, it returns the HTML structure inside. 
+An example, let's say u have on your website a form, and it comes with 3 <input> one being username, another one for passowrd and another one for submit. more or less like this:
+>> <form action="">
+    <input type="text" placeholder="username">
+    <input type="text" placeholder="password">
+    <input type="submit">
+>> </form>
+>> form.innerHTML
+>> "
+    <input type="text" placeholder="username">
+    <input type="text" placeholder="password">
+    <input type="submit">
+   "
+It shows the whole tags, atributes and etc inside the element. U can change HTML content with that and even add elements.
